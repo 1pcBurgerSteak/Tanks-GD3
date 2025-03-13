@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoatShooting : MonoBehaviour
 {
@@ -100,4 +101,4 @@ public class BoatShooting : MonoBehaviour
         m_CurrentLaunchForce = m_MinLaunchForce;
     }
 }
-}
+
