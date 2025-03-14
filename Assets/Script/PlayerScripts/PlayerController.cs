@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private PlayerShooting playerShooting;
     private GameObject playerObject;
     public GameObject playerPrefab;
+    public Vector2 moveInputValue;
+    public bool isShootPressed;
     void Start()
     {
         playerManager = GameObject.Find("PlayerManager");
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 inputValue = context.ReadValue<Vector2>();
-        Debug.Log($"{controlType}{inputValue}");
+        moveInputValue = inputValue;
         if (playerMovement != null)
         {
             playerMovement.UpdateMovement(inputValue);
@@ -57,6 +59,14 @@ public class PlayerController : MonoBehaviour
             {
                 playerShooting.UnShoot();
             }
+        }
+        if(context.performed)
+        {
+            isShootPressed = true;
+        }
+        if (context.canceled)
+        {
+            isShootPressed = false;
         }
     }
 }

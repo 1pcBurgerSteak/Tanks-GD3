@@ -12,7 +12,7 @@ public enum GameState
 public class GameSystem : MonoBehaviour
 {
     public static GameSystem Instance { get; private set; }
-    public GameState CurrentState { get; private set; }
+    public GameState CurrentState;
 
     void Awake()
     {
@@ -25,10 +25,5 @@ public class GameSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    void Start()
-    {
-        CurrentState = GameState.Queue;
     }
 }
