@@ -46,7 +46,7 @@ public class Crate : MonoBehaviour
         {
             PlayerShooting playerShooting = player.GetComponent<PlayerShooting>();
 
-            playerShooting.canMultiShoot = true;
+            //playerShooting.canMultiShoot = true;
         }
 
         if (randomCrateID == 4) //Rapid Fire

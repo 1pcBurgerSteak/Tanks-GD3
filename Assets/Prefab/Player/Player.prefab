@@ -482,11 +482,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
   m_Shell: {fileID: 2688662862826539530, guid: 51f087269dbfdcb499d0fcb95ef26118, type: 3}
+  m_GiantShell: {fileID: 2688662862826539530, guid: e791fd0871ee0fa408928febaa27a751, type: 3}
+  m_CurrentShell: {fileID: 0}
   m_FireTransform: {fileID: 7022527049039680186}
   m_AimSlider: {fileID: 5790381540276407081}
+  m_ShootingAudio: {fileID: 0}
+  m_ChargingClip: {fileID: 0}
+  m_FireClip: {fileID: 0}
   m_MinLaunchForce: 15
   m_MaxLaunchForce: 30
   m_MaxChargeTime: 0.75
+  m_FireCooldown: 1.5
+  Boost_ScatterShell: 0
+  Boost_TripleShell: 0
+  Shell_GiantShell: 0
+  canMultiShoot: 0
 --- !u!114 &-3148649444354395328
 MonoBehaviour:
   m_ObjectHideFlags: 0

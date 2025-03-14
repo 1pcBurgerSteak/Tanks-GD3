@@ -19,6 +19,17 @@ public class PlayerShooting : MonoBehaviour
     private float m_ChargeSpeed;                // How fast the launch force increases, based on the max charge time.
     private bool m_Fired;                       // Whether or not the shell has been launched with this button press.
 
+    // 
+    [Header("Cannon Ball Modifier")]
+    public Rigidbody m_GiantShell;
+    public bool Shell_GiantShell = false;
+     private Rigidbody m_CurrentShell; // cannon ball that is currently being used 
+   
+    [Header("Player Buffs")]
+    public bool Boost_ScatterShell = false;
+    public bool Boost_TripleShell = false;
+ 
+    //
     public bool canMultiShoot = false;
 
     private void OnEnable()
@@ -39,6 +50,17 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
+        //Shell That will be used by the player
+        if (Shell_GiantShell)
+        {
+            m_CurrentShell = m_GiantShell;
+        }
+        else
+        {
+            m_CurrentShell = m_Shell;
+        }
+
+
         // The slider should have a default value of the minimum launch force.
         m_AimSlider.value = m_MinLaunchForce;
 
@@ -49,7 +71,17 @@ public class PlayerShooting : MonoBehaviour
             m_CurrentLaunchForce = m_MaxLaunchForce;
 
             if (canMultiShoot)
+            {
                 StartCoroutine(MultiBulletShoot());
+            }
+            else if (Boost_TripleShell)
+            {
+                StartCoroutine(TriplebulletShoot());
+            }
+            else if (Boost_ScatterShell)
+            {
+                ScatterFire();
+            }
             else
                 Fire();
         }
@@ -75,7 +107,18 @@ public class PlayerShooting : MonoBehaviour
                 StartCoroutine(MultiBulletShoot());
                 return;
             }
+            else if (Boost_TripleShell)
+            {
+                StartCoroutine(TriplebulletShoot());
+                return;
+              
+            }
+            else if ( Boost_ScatterShell)
+            {
+                ScatterFire();
 
+            }
+            else
             Fire();
         }
     }
@@ -88,7 +131,7 @@ public class PlayerShooting : MonoBehaviour
 
         // Create an instance of the shell and store a reference to it's rigidbody.
         Rigidbody shellInstance =
-            Instantiate(m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+            Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
 
         // Set the shell's velocity to the launch force in the fire position's forward direction.
         shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward;
@@ -106,4 +149,45 @@ public class PlayerShooting : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
     }
+    // 
+    public IEnumerator TriplebulletShoot()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            m_CurrentLaunchForce = m_MaxLaunchForce;
+            Fire();
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    private void ScatterFire()
+    {
+        // Set the fired flag so Fire is only called once
+        m_Fired = true;
+
+        float spreadAngle = 20f;   // Angle variation for left and right bullets
+        float spreadDistance = 0.5f; // Horizontal spacing between bullets
+
+        // Fire three bullets at different angles and positions
+        FireWithAngle(0, Vector3.zero);                         // Center bullet
+        FireWithAngle(-spreadAngle, -m_FireTransform.right * spreadDistance); // Left bullet
+        FireWithAngle(spreadAngle, m_FireTransform.right * spreadDistance);   // Right bullet
+
+        // Reset the launch force
+        m_CurrentLaunchForce = m_MinLaunchForce;
+    }
+
+    // Function to fire bullets with an angle offset and position offset
+    private void FireWithAngle(float angleOffset, Vector3 positionOffset)
+    {
+        // Calculate new rotation with an angle offset
+        Quaternion bulletRotation = m_FireTransform.rotation * Quaternion.Euler(0, angleOffset, 0);
+
+        // Instantiate bullet with modified position and rotation
+        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position + positionOffset, bulletRotation);
+
+        // Apply velocity to the bullet
+        shellInstance.velocity = bulletRotation * (Vector3.forward * m_CurrentLaunchForce);
+    }
+
 }
