@@ -9,6 +9,7 @@ public class PlayerAddManager : MonoBehaviour
     public GameObject playerPrefab; // Prefab for the player arrow
     private GameObject instantiatedPlayer; // Reference to the instantiated arrow
     private GameObject playerManager;
+    public CameraControl cameraControl;
 
     private void OnEnable()
     {
