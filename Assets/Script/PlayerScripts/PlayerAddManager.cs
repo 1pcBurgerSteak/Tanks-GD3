@@ -55,6 +55,8 @@ public class PlayerAddManager : MonoBehaviour
         if (playerPrefab != null)
         {
             instantiatedPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity, playerManager.transform);
+
+
         }
         else
         {
