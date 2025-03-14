@@ -49,6 +49,11 @@ public class Crate : MonoBehaviour
             playerShooting.canMultiShoot = true;
         }
 
+        if (randomCrateID == 4) //Rapid Fire
+        {
+
+        }
+
         Destroy(gameObject);
     }
 }
