@@ -107,3 +107,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlType: WASD
+  playerPrefab: {fileID: 5982346555457801697, guid: bccb30256de68df40bbc9795a3d6266e, type: 3}

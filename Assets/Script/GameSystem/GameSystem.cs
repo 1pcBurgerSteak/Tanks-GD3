@@ -12,7 +12,7 @@ public enum GameState
 public class GameSystem : MonoBehaviour
 {
     public static GameSystem Instance { get; private set; }
-    public GameState CurrentState { get; private set; };
+    public GameState CurrentState { get; private set; }
 
     void Awake()
     {
