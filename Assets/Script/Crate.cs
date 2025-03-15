@@ -1,12 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-// SUMMARY
-// Generate a random number
-// That number is an ID for the power up
-// When a player collide with this object, it triggers the power up
-// DEV: Gio Salceda
 
 public class Crate : MonoBehaviour
 {
@@ -14,7 +6,8 @@ public class Crate : MonoBehaviour
 
     void Awake()
     {
-        randomCrateID = Random.Range(1, 4);
+        // Randomly generate an ID for the power-up.
+        randomCrateID = Random.Range(1, 7);
         Debug.Log(randomCrateID);
     }
 
@@ -23,37 +16,37 @@ public class Crate : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             GameObject player = other.gameObject;
-
             HandlePowerUp(player);
         }
     }
 
     private void HandlePowerUp(GameObject player)
     {
-        if (randomCrateID == 1) // Movement speed
-        {
-            PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+        PlayerShooting playerShooting = player.GetComponent<PlayerShooting>();
 
-            playerMovement.m_Speed += 8;
+        switch (randomCrateID)
+        {
+            case 1: // Movement speed
+                PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+                playerMovement.m_Speed += 8;
+                break;
+            case 2: // Scale up
+                player.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+                break;
+            case 3: // Scatter Shell
+                playerShooting.EnableScatterShell();
+                break;
+            case 4: // Triple Shell
+                playerShooting.EnableTripleShell();
+                break;
+            case 5: // Giant Shell
+                playerShooting.EnableGiantShell();
+                break;
+            case 6: // Rapid Fire
+                playerShooting.EnableRapidFire();
+                break;
         }
 
-        if (randomCrateID == 2) // Scale up
-        {
-            player.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
-        }
-
-        if (randomCrateID == 3) // Multi bullets
-        {
-            PlayerShooting playerShooting = player.GetComponent<PlayerShooting>();
-
-            //playerShooting.canMultiShoot = true;
-        }
-
-        if (randomCrateID == 4) //Rapid Fire
-        {
-
-        }
-
-        Destroy(gameObject);
+        Destroy(gameObject); // Destroy the crate after applying the power-up.
     }
 }
