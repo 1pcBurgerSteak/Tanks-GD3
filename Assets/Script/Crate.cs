@@ -7,7 +7,7 @@ public class Crate : MonoBehaviour
     void Awake()
     {
         // Randomly generate an ID for the power-up.
-        randomCrateID = Random.Range(1, 7);
+        randomCrateID = Random.Range(1, 8); // Updated range to include Spray Fire
         Debug.Log(randomCrateID);
     }
 
@@ -44,6 +44,9 @@ public class Crate : MonoBehaviour
                 break;
             case 6: // Rapid Fire
                 playerShooting.EnableRapidFire();
+                break;
+            case 7: // Spray Fire
+                playerShooting.EnableSprayFire();
                 break;
         }
 

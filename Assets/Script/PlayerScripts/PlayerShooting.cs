@@ -25,6 +25,7 @@ public class PlayerShooting : MonoBehaviour
     public bool Boost_ScatterShell = false;
     public bool Boost_TripleShell = false;
     public bool isRapidFire = false;            // Determines if Rapid Fire mode is active.
+    public bool Boost_SprayFire = false;
 
     private float reloadTimer = 0f;             // Tracks reload time.
     private float reloadTime = 1f;              // Default reload time.
@@ -159,11 +160,11 @@ public class PlayerShooting : MonoBehaviour
         FireWithAngle(spreadAngle, m_FireTransform.right * spreadDistance);   // Right bullet.
     }
 
-    private void FireWithAngle(float angleOffset, Vector3 positionOffset)
+    private void FireWithAngle(float angle, Vector3 additionalVelocity)
     {
-        Quaternion bulletRotation = m_FireTransform.rotation * Quaternion.Euler(0, angleOffset, 0);
-        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position + positionOffset, bulletRotation);
-        shellInstance.velocity = bulletRotation * (Vector3.forward * m_CurrentLaunchForce);
+        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation);
+        shellInstance.transform.Rotate(0, angle, 0);
+        shellInstance.velocity = m_FireTransform.forward * m_CurrentLaunchForce + additionalVelocity;
     }
 
     public void EnableGiantShell()
@@ -214,5 +215,34 @@ public class PlayerShooting : MonoBehaviour
     public void DisableRapidFire()
     {
         isRapidFire = false;
+    }
+
+    private void SprayFire()
+    {
+        float sprayAngle = 45f;   // Spread range.
+        int numBullets = 5;       // Number of bullets in the spray.
+
+        Debug.Log("Spray Fire activated!"); // Debug log for spray fire
+
+        for (int i = 0; i < numBullets; i++)
+        {
+            float angle = -sprayAngle / 2 + (sprayAngle / (numBullets - 1)) * i;
+            FireWithAngle(angle, Vector3.zero);
+        }
+    }
+
+
+    public void EnableSprayFire() //idk how to simulate flamethrower so i improvised.
+    {
+        Shell_GiantShell = false;
+        Boost_ScatterShell = false;
+        Boost_TripleShell = false;
+        Boost_SprayFire = true;
+        Invoke("DisableSprayFire", 5f);
+    }
+
+    public void DisableSprayFire()
+    {
+        Boost_SprayFire = false;
     }
 }
