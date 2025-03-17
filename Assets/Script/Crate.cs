@@ -18,6 +18,11 @@ public class Crate : MonoBehaviour
             GameObject player = other.gameObject;
             HandlePowerUp(player);
         }
+        if (other.gameObject.CompareTag("Player2"))
+        {
+            GameObject player = other.gameObject;
+            HandlePowerUp(player);
+        }
     }
 
     private void HandlePowerUp(GameObject player)

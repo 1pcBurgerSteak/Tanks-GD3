@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CameraControl : MonoBehaviour
@@ -40,7 +41,10 @@ public class CameraControl : MonoBehaviour
     private void UpdateTargets()
     {
         // Find all game objects with the tag "Player" and set them as targets
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player")
+     .Concat(GameObject.FindGameObjectsWithTag("Player2"))
+     .ToArray();
+
         m_Targets = new Transform[players.Length];
 
         for (int i = 0; i < players.Length; i++)
