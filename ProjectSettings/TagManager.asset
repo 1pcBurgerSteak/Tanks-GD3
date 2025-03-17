@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Crate
-  - Player2
   layers:
   - Default
   - TransparentFX
