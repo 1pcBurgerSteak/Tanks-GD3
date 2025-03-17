@@ -20,12 +20,14 @@ public class CameraControl : MonoBehaviour
     private void Awake()
     {
         m_Camera = GetComponentInChildren<Camera>();
-        UpdateTargets();
+        //UpdateTargets();
     }
 
     private void Update()
     {
-        UpdateTargets();
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        m_Targets = players.Select(player => player.transform).ToArray();
     }
 
 
@@ -40,17 +42,7 @@ public class CameraControl : MonoBehaviour
 
     private void UpdateTargets()
     {
-        // Find all game objects with the tag "Player" and set them as targets
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-     //.Concat(GameObject.FindGameObjectsWithTag("Player2"))
-     //.ToArray();
 
-        m_Targets = new Transform[players.Length];
-
-        for (int i = 0; i < players.Length; i++)
-        {
-            m_Targets[i] = players[i].transform;
-        }
     }
 
     private void Move()

@@ -67,14 +67,14 @@ public class UIHealth : MonoBehaviour
         m_Dead = true;
 
         
-        m_ExplosionParticles.transform.position = transform.position;
-        m_ExplosionParticles.gameObject.SetActive(true);
+        //m_ExplosionParticles.transform.position = transform.position;
+        //m_ExplosionParticles.gameObject.SetActive(true);
 
         
-        m_ExplosionParticles.Play();
+        //m_ExplosionParticles.Play();
 
         
-        m_ExplosionAudio.Play();
+        //m_ExplosionAudio.Play();
 
         
         gameObject.SetActive(false);
