@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlType: ArrowKeys
-  playerPrefab: {fileID: 5982346555457801697, guid: b81092139d4f40241b56642e24c3d34c, type: 3}
+  playerPrefab: {fileID: 5982346555457801697, guid: bccb30256de68df40bbc9795a3d6266e, type: 3}
   moveInputValue: {x: 0, y: 0}
   isShootPressed: 0
 --- !u!195 &-6828187207724933263

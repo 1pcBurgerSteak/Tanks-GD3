@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 5857398866189830926}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player2
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -493,6 +493,7 @@ MonoBehaviour:
   Boost_ScatterShell: 0
   Boost_TripleShell: 0
   isRapidFire: 0
+  Boost_SprayFire: 0
 --- !u!114 &-3148649444354395328
 MonoBehaviour:
   m_ObjectHideFlags: 0
