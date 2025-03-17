@@ -26,7 +26,7 @@ public class Shark : MonoBehaviour
 
     public void Update()
     {
-<<<<<<< HEAD
+/*<<<<<<< HEAD
         player = GameObject.FindWithTag("Player").transform;
         player1 = GameObject.FindWithTag("Player").transform;
 
@@ -55,6 +55,6 @@ public class Shark : MonoBehaviour
         else
         {
             Enemy.SetDestination(players[1].position);
-        }
+        }*/
     }
 }

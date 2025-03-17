@@ -11,19 +11,10 @@ public class PlayerAddManager : MonoBehaviour
     public GameObject instantiatedPlayer; // Reference to the instantiated arrow
     private GameObject playerManager;
     public CameraControl cameraControl;
-<<<<<<< HEAD
-  
-=======
->>>>>>> singleplayer
- 
+
     private void Start()
     {
-<<<<<<< HEAD
-      
-=======
 
-       
->>>>>>> singleplayer
     }
     private void OnEnable()
     {
@@ -74,14 +65,6 @@ public class PlayerAddManager : MonoBehaviour
         {
 
             instantiatedPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity, playerManager.transform);
-<<<<<<< HEAD
-
-            
-=======
-           
-            
-           
->>>>>>> singleplayer
 
         }
         else
