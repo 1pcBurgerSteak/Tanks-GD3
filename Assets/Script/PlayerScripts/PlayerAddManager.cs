@@ -68,10 +68,7 @@ public class PlayerAddManager : MonoBehaviour
             instantiatedPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity, playerManager.transform);
            
             
-            
-            //instantiatedPlayer.tag = (playerCount == 0) ? "Player2" : "Player";
-
-            //playerCount++;
+           
 
         }
         else
