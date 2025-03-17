@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6435545563381280639}
   - component: {fileID: 6435545563381280632}
   - component: {fileID: -7300411196253390572}
+  - component: {fileID: -6828187207724933263}
   m_Layer: 0
   m_Name: PlayerArrow
   m_TagString: Untagged
@@ -107,4 +108,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlType: ArrowKeys
-  playerPrefab: {fileID: 5982346555457801697, guid: bccb30256de68df40bbc9795a3d6266e, type: 3}
+  playerPrefab: {fileID: 5982346555457801697, guid: b81092139d4f40241b56642e24c3d34c, type: 3}
+  moveInputValue: {x: 0, y: 0}
+  isShootPressed: 0
+--- !u!195 &-6828187207724933263
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435545563381280633}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
