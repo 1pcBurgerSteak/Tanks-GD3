@@ -10,14 +10,12 @@ public class PlayerAddManager : MonoBehaviour
     public GameObject instantiatedPlayer; // Reference to the instantiated arrow
     private GameObject playerManager;
     public CameraControl cameraControl;
-    private Shark shark;
+  
  
     public int playerCount = 0;
     private void Start()
     {
-        shark = GetComponent<Shark>();
-        shark = FindObjectOfType<Shark>();
-       
+      
     }
     private void OnEnable()
     {
@@ -69,9 +67,7 @@ public class PlayerAddManager : MonoBehaviour
 
             instantiatedPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity, playerManager.transform);
 
-            //instantiatedPlayer.tag = (playerCount == 0) ? "Player2" : "Player";
-
-            //playerCount++;
+            
 
         }
         else

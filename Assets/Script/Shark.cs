@@ -21,7 +21,7 @@ public class Shark : MonoBehaviour
     }
     public void Update()
     {
-        player = GameObject.FindWithTag("Player2").transform;
+        player = GameObject.FindWithTag("Player").transform;
         player1 = GameObject.FindWithTag("Player").transform;
 
         Vector3 nearest = gameObject.transform.position - player1.transform.position;
