@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2688662862826539526}
   - component: {fileID: 2688662862826539530}
   - component: {fileID: 4238506273130923391}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CannonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2688662862826539525}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -127,10 +127,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TankMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 72
   m_ExplosionParticles: {fileID: 0}
   m_ExplosionAudio: {fileID: 0}
   m_MaxDamage: 100
-  m_ExplosionForce: 1000
+  m_ExplosionForce: 10
   m_MaxLifeTime: 2
   m_ExplosionRadius: 5

@@ -5,16 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Crate
+  - Player2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Bullet
+  - Range
   - 
   - 
   - 
