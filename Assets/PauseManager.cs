@@ -47,3 +47,5 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 }
+
+//Sayno
