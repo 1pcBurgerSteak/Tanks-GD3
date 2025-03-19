@@ -173,13 +173,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563925383837067788}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 2}
+  m_LocalRotation: {x: -0.05706344, y: -0, z: -0, w: 0.9983706}
+  m_LocalPosition: {x: 0, y: 0.76, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5982346555457801699}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.543, y: 0, z: 0}
 --- !u!1 &744759668000295667
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: -6137007208801954550}
   - component: {fileID: -2022052893187785375}
   - component: {fileID: -3148649444354395328}
+  - component: {fileID: 1463210368429512413}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -468,6 +469,8 @@ MonoBehaviour:
   m_TurnSpeed: 180
   m_MovementInputValue: 0
   m_TurnInputValue: 0
+  speedBuff: 0
+  scaleBuff: 0
 --- !u!114 &-2022052893187785375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,8 +494,6 @@ MonoBehaviour:
   Shell_GiantShell: 0
   Boost_ScatterShell: 0
   Boost_TripleShell: 0
-  isRapidFire: 0
-  Boost_SprayFire: 0
 --- !u!114 &-3148649444354395328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +512,29 @@ MonoBehaviour:
   m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 0}
+--- !u!114 &1463210368429512413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982346555457801697}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f0a3498c7e0394eace2c12454c1a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  m_Shell: {fileID: 2688662862826539530, guid: 51f087269dbfdcb499d0fcb95ef26118, type: 3}
+  m_FireTransform: {fileID: 7022527049039680186}
+  m_AimSlider: {fileID: 5790381540276407081}
+  m_ShootingAudio: {fileID: 0}
+  m_ChargingClip: {fileID: 0}
+  m_FireClip: {fileID: 0}
+  m_MinLaunchForce: 15
+  m_MaxLaunchForce: 30
+  m_MaxChargeTime: 0.75
+  reloadTime: 1
 --- !u!1 &5982346556567477780
 GameObject:
   m_ObjectHideFlags: 0

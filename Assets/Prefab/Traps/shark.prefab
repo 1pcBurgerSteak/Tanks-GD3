@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484c8ef5b12da4f418261b1a2ca55cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  Enemy: {fileID: -1235748486923020073}
+  navMeshAgent: {fileID: -1235748486923020073}
+  target: {fileID: 0}
 --- !u!54 &-7559690697199772615
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,10 +11,11 @@ public class PlayerAddManager : MonoBehaviour
     public GameObject instantiatedPlayer; // Reference to the instantiated arrow
     private GameObject playerManager;
     public CameraControl cameraControl;
-
+ 
     private void Start()
     {
 
+       
     }
     private void OnEnable()
     {
@@ -63,9 +64,7 @@ public class PlayerAddManager : MonoBehaviour
     {
         if (playerPrefab != null)
         {
-
             instantiatedPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity, playerManager.transform);
-
         }
         else
         {

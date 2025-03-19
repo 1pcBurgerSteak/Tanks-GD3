@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
-    private int randomCrateID;
+    public int randomCrateID;
+    private GameObject scaledPlayer;
 
     void Awake()
     {
@@ -18,39 +19,66 @@ public class Crate : MonoBehaviour
             GameObject player = other.gameObject;
             HandlePowerUp(player);
         }
-        
     }
 
     private void HandlePowerUp(GameObject player)
     {
         PlayerShooting playerShooting = player.GetComponent<PlayerShooting>();
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
 
         switch (randomCrateID)
         {
             case 1: // Movement speed
-                PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
-                playerMovement.m_Speed += 8;
+                
+                if (playerMovement != null)
+                {
+                    playerMovement.EnableSpeedBuff();
+                }
                 break;
+
             case 2: // Scale up
-                player.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+                if(playerMovement != null)
+                {
+                    playerMovement.EnableScaleBuff();
+                }
                 break;
+
             case 3: // Scatter Shell
-                playerShooting.EnableScatterShell();
+                if (playerShooting != null)
+                {
+                    playerShooting.EnableScatterShell();
+                }
                 break;
+
             case 4: // Triple Shell
-                playerShooting.EnableTripleShell();
+                if (playerShooting != null)
+                {
+                    playerShooting.EnableTripleShell();
+                }
                 break;
+
             case 5: // Giant Shell
-                playerShooting.EnableGiantShell();
+                if (playerShooting != null)
+                {
+                    playerShooting.EnableGiantShell();
+                }
                 break;
+
             case 6: // Rapid Fire
-                playerShooting.EnableRapidFire();
+                if (playerShooting != null)
+                {
+                    //playerShooting.EnableRapidFire();
+                }
                 break;
+
             case 7: // Spray Fire
-                playerShooting.EnableSprayFire();
+                if (playerShooting != null)
+                {
+                    //playerShooting.EnableSprayFire();
+                }
                 break;
         }
 
-        Destroy(gameObject); // Destroy the crate after applying the power-up.
+        Destroy(gameObject);
     }
 }

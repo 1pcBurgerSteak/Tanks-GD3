@@ -3,57 +3,94 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float m_Speed = 12f;
+    public float m_Speed = 12f; // Default speed
     public float m_TurnSpeed = 180f;
     private Rigidbody m_Rigidbody;
     public float m_MovementInputValue;
     public float m_TurnInputValue;
-    private void Awake ()
+
+    public bool speedBuff = false;
+    public bool scaleBuff = false;
+
+    private void Awake()
     {
-        m_Rigidbody = GetComponent<Rigidbody> ();
+        m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-
-    private void OnEnable ()
+    private void OnEnable()
     {
         m_Rigidbody.isKinematic = false;
     }
 
-
-    private void OnDisable ()
+    private void OnDisable()
     {
         m_Rigidbody.isKinematic = true;
     }
+
     public void UpdateMovement(Vector2 input)
     {
         m_MovementInputValue = input.y;
         m_TurnInputValue = input.x;
     }
 
-
-    private void Start ()
+    private void FixedUpdate()
     {
-
+        Move();
+        Turn();
     }
 
-    private void FixedUpdate ()
-    {
-        Move ();
-        Turn ();
-    }
-
-
-    private void Move ()
+    private void Move()
     {
         Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
         m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
     }
 
-
-    private void Turn ()
+    private void Turn()
     {
         float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
-        Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);
-        m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
+    }
+
+    // Enable the speed buff
+    public void EnableSpeedBuff()
+    {
+        CancelInvoke(nameof(DisableSpeedBuff)); // Cancel any existing timer
+        speedBuff = true;
+        m_Speed = 20f;
+
+        Invoke(nameof(DisableSpeedBuff), 10f);
+    }
+
+    // Disable the speed buff
+    public void DisableSpeedBuff()
+    {
+        if (speedBuff)
+        {
+            speedBuff = false;
+            m_Speed = 12f;
+        }
+    }
+
+
+    public void EnableScaleBuff()
+    {
+        CancelInvoke(nameof(DisableScaleBuff)); // Cancel any existing timer
+        scaleBuff = true;
+        gameObject.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+
+        // Reset the scale after 15 seconds
+        Invoke(nameof(DisableScaleBuff), 15f);
+    }
+
+    // Disable the scale buff
+    public void DisableScaleBuff()
+    {
+        if (scaleBuff)
+        {
+            scaleBuff = false;
+            gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            Debug.Log("potaka");
+        }
     }
 }
