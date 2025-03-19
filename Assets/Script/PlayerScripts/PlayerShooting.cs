@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -19,16 +21,11 @@ public class PlayerShooting : MonoBehaviour
     [Header("Cannon Ball Modifier")]
     public Rigidbody m_GiantShell;
     public bool Shell_GiantShell = false;
-    private Rigidbody m_CurrentShell;           // Cannon ball that is currently being used.
+    private Rigidbody m_CurrentShell;           // cannon ball that is currently being used 
 
     [Header("Player Buffs")]
     public bool Boost_ScatterShell = false;
     public bool Boost_TripleShell = false;
-    public bool isRapidFire = false;            // Determines if Rapid Fire mode is active.
-    public bool Boost_SprayFire = false;
-
-    private float reloadTimer = 0f;             // Tracks reload time.
-    private float reloadTime = 1f;              // Default reload time.
 
     private void OnEnable()
     {
@@ -45,7 +42,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
-        // Shell that will be used by the player.
+        // Shell that will be used by the player
         if (Shell_GiantShell)
         {
             m_CurrentShell = m_GiantShell;
@@ -55,33 +52,25 @@ public class PlayerShooting : MonoBehaviour
             m_CurrentShell = m_Shell;
         }
 
-        // Handle reload timer.
-        if (reloadTimer > 0f)
-        {
-            reloadTimer -= Time.deltaTime;
-        }
-
         // The slider should have a default value of the minimum launch force.
         m_AimSlider.value = m_MinLaunchForce;
 
         // If the max force has been exceeded and the shell hasn't yet been launched...
-        if (m_CurrentLaunchForce >= m_MaxLaunchForce && !m_Fired && reloadTimer <= 0f)
+        if (m_CurrentLaunchForce >= m_MaxLaunchForce && !m_Fired)
         {
             // ... use the max force and launch the shell.
             m_CurrentLaunchForce = m_MaxLaunchForce;
 
             if (Boost_TripleShell)
             {
-                TripleBulletShoot();
+                StartCoroutine(TripleBulletShoot());
             }
             else if (Boost_ScatterShell)
             {
                 ScatterFire();
             }
             else
-            {
                 Fire();
-            }
         }
         // Otherwise, if the fire button is being held and the shell hasn't been launched yet...
         else if (!m_Fired)
@@ -93,20 +82,17 @@ public class PlayerShooting : MonoBehaviour
 
     public void Shoot()
     {
-        if (reloadTimer <= 0f)
-        {
-            m_Fired = false;
-            m_CurrentLaunchForce = m_MinLaunchForce;
-        }
+        m_Fired = false;
+        m_CurrentLaunchForce = m_MinLaunchForce;
     }
 
     public void UnShoot()
     {
-        if (!m_Fired && reloadTimer <= 0f)
+        if (!m_Fired)
         {
             if (Boost_TripleShell)
             {
-                TripleBulletShoot();
+                StartCoroutine(TripleBulletShoot());
                 return;
             }
             else if (Boost_ScatterShell)
@@ -114,25 +100,17 @@ public class PlayerShooting : MonoBehaviour
                 ScatterFire();
             }
             else
-            {
                 Fire();
-            }
         }
     }
 
     private void Fire()
     {
-        // Prevent firing if reloading.
-        if (reloadTimer > 0f) return;
-
-        // Set the fired flag so Fire is only called once.
+        // Set the fired flag so only Fire is only called once.
         m_Fired = true;
 
-        // Set the reload timer depending on Rapid Fire status.
-        reloadTimer = isRapidFire ? 0f : reloadTime;
-
         // Create an instance of the shell and store a reference to its rigidbody.
-        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation);
+        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
 
         // Set the shell's velocity to the launch force in the fire position's forward direction.
         shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward;
@@ -141,16 +119,21 @@ public class PlayerShooting : MonoBehaviour
         m_CurrentLaunchForce = m_MinLaunchForce;
     }
 
-    private void TripleBulletShoot()
+    public IEnumerator TripleBulletShoot()
     {
         for (int i = 0; i < 3; i++)
         {
+            m_CurrentLaunchForce = m_MaxLaunchForce;
             Fire();
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
     private void ScatterFire()
     {
+        // Set the fired flag so Fire is only called once.
+        m_Fired = true;
+
         float spreadAngle = 20f;   // Angle variation for left and right bullets.
         float spreadDistance = 0.5f; // Horizontal spacing between bullets.
 
@@ -158,91 +141,45 @@ public class PlayerShooting : MonoBehaviour
         FireWithAngle(0, Vector3.zero);                         // Center bullet.
         FireWithAngle(-spreadAngle, -m_FireTransform.right * spreadDistance); // Left bullet.
         FireWithAngle(spreadAngle, m_FireTransform.right * spreadDistance);   // Right bullet.
+
+        // Reset the launch force.
+        m_CurrentLaunchForce = m_MinLaunchForce;
     }
 
-    private void FireWithAngle(float angle, Vector3 additionalVelocity)
+    // Function to fire bullets with an angle offset and position offset.
+    private void FireWithAngle(float angleOffset, Vector3 positionOffset)
     {
-        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation);
-        shellInstance.transform.Rotate(0, angle, 0);
-        shellInstance.velocity = m_FireTransform.forward * m_CurrentLaunchForce + additionalVelocity;
+        // Calculate new rotation with an angle offset.
+        Quaternion bulletRotation = m_FireTransform.rotation * Quaternion.Euler(0, angleOffset, 0);
+
+        // Instantiate bullet with modified position and rotation.
+        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position + positionOffset, bulletRotation);
+
+        // Apply velocity to the bullet.
+        shellInstance.velocity = bulletRotation * (Vector3.forward * m_CurrentLaunchForce);
     }
 
+    // Function to enable the GiantShell power-up.
     public void EnableGiantShell()
     {
         Shell_GiantShell = true;
         Boost_ScatterShell = false;
         Boost_TripleShell = false;
-        Invoke("DisableGiantShell", 5f); // Disable GiantShell after 5 seconds.
     }
 
-    public void DisableGiantShell()
-    {
-        Shell_GiantShell = false;
-    }
-
+    // Function to enable the TripleShell power-up.
     public void EnableTripleShell()
     {
         Shell_GiantShell = false;
         Boost_ScatterShell = false;
         Boost_TripleShell = true;
-        Invoke("DisableTripleShell", 5f); // Disable TripleShell after 5 seconds.
     }
 
-    public void DisableTripleShell()
-    {
-        Boost_TripleShell = false;
-    }
-
+    // Function to enable the ScatterShell power-up.
     public void EnableScatterShell()
     {
         Shell_GiantShell = false;
         Boost_ScatterShell = true;
         Boost_TripleShell = false;
-        Invoke("DisableScatterShell", 5f); // Disable ScatterShell after 5 seconds.
-    }
-
-    public void DisableScatterShell()
-    {
-        Boost_ScatterShell = false;
-    }
-
-    public void EnableRapidFire()
-    {
-        isRapidFire = true;
-        Invoke("DisableRapidFire", 5f); // Disable Rapid Fire after 5 seconds.
-    }
-
-    public void DisableRapidFire()
-    {
-        isRapidFire = false;
-    }
-
-    private void SprayFire()
-    {
-        float sprayAngle = 45f;   // Spread range.
-        int numBullets = 5;       // Number of bullets in the spray.
-
-        Debug.Log("Spray Fire activated!"); // Debug log for spray fire
-
-        for (int i = 0; i < numBullets; i++)
-        {
-            float angle = -sprayAngle / 2 + (sprayAngle / (numBullets - 1)) * i;
-            FireWithAngle(angle, Vector3.zero);
-        }
-    }
-
-
-    public void EnableSprayFire() //idk how to simulate flamethrower so i improvised.
-    {
-        Shell_GiantShell = false;
-        Boost_ScatterShell = false;
-        Boost_TripleShell = false;
-        Boost_SprayFire = true;
-        Invoke("DisableSprayFire", 5f);
-    }
-
-    public void DisableSprayFire()
-    {
-        Boost_SprayFire = false;
     }
 }

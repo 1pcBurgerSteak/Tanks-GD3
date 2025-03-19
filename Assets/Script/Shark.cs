@@ -5,39 +5,48 @@ using UnityEngine.AI;
 
 public class Shark : MonoBehaviour
 {
-    public NavMeshAgent Enemy;
-    private PlayerAddManager addManager;
-
-    public List<Transform> players = new List<Transform>();
+    public NavMeshAgent navMeshAgent;
+    public Transform target;
 
     private void Start()
     {
-        addManager = FindObjectOfType<PlayerAddManager>();
-
-        GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
-
-        if (playerObjects.Length == 2)
-        {
-            players.Add(playerObjects[0].transform);
-            players.Add(playerObjects[1].transform);
-        }
-       
+        Invoke("DestroyShark", 15f);
     }
 
-    public void Update()
+    void Update()
     {
-        
-
-        Vector3 near = gameObject.transform.position - players[1].position;
-        Vector3 nearest = gameObject.transform.position - players[0].position;
-
-        if (near.magnitude > nearest.magnitude)
+        if(target != null)
         {
-            Enemy.SetDestination(players[0].position);
+            navMeshAgent.destination = target.position;
         }
         else
         {
-            Enemy.SetDestination(players[1].position);
+            DestroyShark();
+        }
+    }
+
+    private void DestroyShark()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            UIHealth health = other.GetComponent<UIHealth>();
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+
+            if(health != null)
+            {
+                health.TakeDamage(20f);
+
+                Vector3 pushDirection = other.transform.position - transform.position;
+                pushDirection.Normalize();
+
+                float pushForce = 10f;
+                rb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+            }
         }
     }
 }

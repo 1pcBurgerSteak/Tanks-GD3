@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: d18a8e582ea67b94d815d9fea3e93cc7, type: 2}
 --- !u!1 &48876831
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,11 +581,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7900913399487357703, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}
       propertyPath: m_Name
-      value: SharkManager
+      value: Trap Manager
       objectReference: {fileID: 0}
     - target: {fileID: 7900913399487357703, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}
@@ -929,7 +929,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1184362818
 GameObject:
@@ -1022,7 +1022,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1422894929
 BoxCollider:
@@ -1403,7 +1403,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7478665254578738901, guid: 9882ddd233188bb4e81a8231480a14f9, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7478665254578738901, guid: 9882ddd233188bb4e81a8231480a14f9, type: 3}
       propertyPath: m_LocalPosition.x
