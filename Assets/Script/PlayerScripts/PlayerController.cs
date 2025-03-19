@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private GameObject playerManager;
     private PlayerMovement playerMovement;
     private PlayerShooting playerShooting;
+    private ShipShield shipShield; // shield script
     private GameObject playerObject;
     public GameObject playerPrefab;
     public Vector2 moveInputValue;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         {
             playerMovement = playerObject.GetComponent<PlayerMovement>();
             playerShooting = playerObject.GetComponent<PlayerShooting>();
+            shipShield = playerObject.GetComponent<ShipShield>();
         }
     }
 
@@ -68,6 +70,18 @@ public class PlayerController : MonoBehaviour
         if (context.canceled)
         {
             isShootPressed = false;
+        }
+    }
+
+    public void OnShield(InputAction.CallbackContext context)
+    {
+        if(shipShield != null)
+        {
+            if (context.performed)
+            {
+                Debug.Log("Shield");
+                StartCoroutine(shipShield.ActivateShield());
+            }
         }
     }
 }

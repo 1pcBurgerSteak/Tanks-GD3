@@ -3,54 +3,62 @@ using System.Collections;
 
 namespace Complete
 {
-    public class TankShield : MonoBehaviour
+    public class ShipShield : MonoBehaviour
     {
-        public int maxShields = 3; 
-        public float shieldDuration = 15f; 
-        public GameObject shieldVisual; // Shield effect 
-        public Collider shieldCollider;  
-        private TankShooting tankShooting; 
+        public float shieldDuration = 3f; // Shield active time
+        public float shieldCooldown = 15f; // Cooldown duration
+        public GameObject shieldVisual; // Shield effect
+        //public Collider shieldCollider;
 
-        private int currentShields;
-        private bool isShieldActive = false;
+        public bool isShieldActive = false;
+        public bool isOnCooldown = false;
 
         private void Start()
         {
-            currentShields = maxShields;
-            if (shieldVisual != null)
-                shieldVisual.SetActive(false);
 
-            tankShooting = GetComponent<TankShooting>(); // Get shooting component
         }
-
 
         public IEnumerator ActivateShield()
         {
-            if (isShieldActive || currentShields <= 0) yield break;
+            // Prevent activation if shield is already active or cooling down
+            if (isShieldActive || isOnCooldown) yield break;
 
             isShieldActive = true;
+            isOnCooldown = true;
+
             if (shieldVisual != null)
+            {
                 shieldVisual.SetActive(true);
+                Debug.Log("activate shield");
+            }
+                //shieldVisual.SetActive(true);
 
-            if (shieldCollider != null)
-                shieldCollider.enabled = true; // Enable shield collision
-
-            currentShields--;
+            //if (shieldCollider != null)
+              //  shieldCollider.enabled = true;
 
             yield return new WaitForSeconds(shieldDuration);
 
             if (shieldVisual != null)
                 shieldVisual.SetActive(false);
 
-            if (shieldCollider != null)
-                shieldCollider.enabled = false; // Disable shield collision
+            //if (shieldCollider != null)
+              //  shieldCollider.enabled = false;
 
             isShieldActive = false;
+
+            yield return new WaitForSeconds(shieldCooldown - shieldDuration);
+
+            isOnCooldown = false;
         }
 
         public bool IsShieldActive()
         {
             return isShieldActive;
+        }
+
+        public bool IsOnCooldown()
+        {
+            return isOnCooldown;
         }
     }
 }

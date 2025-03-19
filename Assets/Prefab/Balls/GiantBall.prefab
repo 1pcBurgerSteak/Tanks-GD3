@@ -133,4 +133,4 @@ MonoBehaviour:
   m_MaxDamage: 100
   m_ExplosionForce: 10
   m_MaxLifeTime: 2
-  m_ExplosionRadius: 5
+  m_ExplosionRadius: 7
