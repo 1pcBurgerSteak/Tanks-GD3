@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
+    public SingleplayerManager manager;
+
     public GameObject enemyPrefab;
     public GameObject bossPrefab;
     public Transform[] spawnPoints;
 
-    public int waveCount = 0;
+    public int waveCount = 1; // Start with Wave 1
     public int spawnCount = 3;
     private float spawnTimer = 0f;
     private float waveTimer = 0f;
@@ -15,6 +17,12 @@ public class EnemySpawn : MonoBehaviour
 
     private int enemiesSpawned = 0; // Tracks enemies spawned in the current wave.
     private List<GameObject> activeEnemies = new List<GameObject>(); // Tracks currently active enemies.
+
+    void Start()
+    {
+        manager = FindObjectOfType<SingleplayerManager>();
+        manager.Wave(waveCount);
+    }
 
     void Update()
     {
@@ -26,7 +34,7 @@ public class EnemySpawn : MonoBehaviour
             if (waveTimer >= 5f && AllEnemiesDestroyed())
             {
                 waveTimer = 0f;
-                waveCount++;
+                manager.Wave(waveCount); // Notify the manager of the current wave
                 waveActive = true;
                 enemiesSpawned = 0;
 
@@ -72,6 +80,9 @@ public class EnemySpawn : MonoBehaviour
             {
                 waveActive = false;
                 Debug.Log("Wave " + waveCount + " finished!");
+
+                // Increment waveCount here after the wave finishes
+                waveCount++;
             }
         }
     }

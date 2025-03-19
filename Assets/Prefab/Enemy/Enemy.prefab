@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1530040580796936393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6997767056862321909}
+  m_Layer: 6
+  m_Name: Fire Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6997767056862321909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530040580796936393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.11, z: 2.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5538432645241767128}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5538432644790874486
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,10 +136,10 @@ GameObject:
   - component: {fileID: 5538432645241767128}
   - component: {fileID: 2429531826388208978}
   - component: {fileID: 6768469462963165345}
-  - component: {fileID: -4781862201424118195}
   - component: {fileID: 7067204894163802991}
+  - component: {fileID: 3672213133033643562}
   - component: {fileID: -6516961201860555867}
-  - component: {fileID: -274346462146104296}
+  - component: {fileID: 8310733198106952301}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -130,6 +160,7 @@ Transform:
   m_Children:
   - {fileID: 5538432646832931670}
   - {fileID: 6659679278844263545}
+  - {fileID: 6997767056862321909}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,19 +193,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 1.5, z: 2.5}
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!65 &-4781862201424118195
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5538432645241767129}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!114 &7067204894163802991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +206,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+--- !u!114 &3672213133033643562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538432645241767129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a927eacb2c69d41449a523a792bbb04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShell: {fileID: 2688662862826539530, guid: 980cc5466947fcc47bbd6753586d9069, type: 3}
+  firePoint: {fileID: 6997767056862321909}
+  minLaunchForce: 10
+  maxLaunchForce: 20
+  fireRate: 2
+  rangeCollider: {fileID: 525428101678147522}
+  isBoss: 0
 --- !u!195 &-6516961201860555867
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -210,7 +247,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-274346462146104296
+--- !u!114 &8310733198106952301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,6 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b8afa58c320b84685a19deac4fe13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 50
+  manager: {fileID: 0}
   m_StartingHealth: 100
   m_Slider: {fileID: 5904039413877547062}
   m_FillImage: {fileID: 948656591147803060}

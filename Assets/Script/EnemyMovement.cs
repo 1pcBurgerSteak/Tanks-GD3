@@ -13,12 +13,16 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        
-        // Find the nearest player
+
         Transform nearestPlayer = FindNearestPlayer();
         if (nearestPlayer != null)
         {
+            // Set the destination for the NavMeshAgent
             navMeshAgent.destination = nearestPlayer.position;
+
+            Vector3 direction = (nearestPlayer.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z)); // Ignore the y-axis
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // Smooth rotation
         }
 
         Debug.DrawLine(transform.position, navMeshAgent.destination, Color.red);
