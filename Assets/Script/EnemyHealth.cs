@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.WebSockets;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
-public class UIHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-    public int score = 0;
     public SingleplayerManager manager;
-
+    public int score = 0;
     public float m_StartingHealth = 100f;               
     public Slider m_Slider;                             
     public Image m_FillImage;                           
@@ -38,7 +38,16 @@ public class UIHealth : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<SingleplayerManager>();
+        if(manager == null)
+        {
+            Debug.LogError("No manager found");
+        }
+        else
+        {
+               Debug.Log("Manager found");
+        }
     }
+
 
     private void OnEnable()
     {
@@ -83,17 +92,8 @@ public class UIHealth : MonoBehaviour
 
         
         //m_ExplosionAudio.Play();
-        if(manager != null && gameObject.CompareTag("Player"))
-        {
-            manager.Life();
-        }
 
-
-        if(manager != null && !gameObject.CompareTag("Player"))
-        {
-            manager.AddScore(score);
-            Debug.Log("Add Socre");
-        }
-        gameObject.SetActive(false);
+        manager.AddScore(score);
+        Destroy(gameObject);
     }
 }

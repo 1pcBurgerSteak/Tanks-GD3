@@ -506,6 +506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b8afa58c320b84685a19deac4fe13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  manager: {fileID: 0}
   m_StartingHealth: 100
   m_Slider: {fileID: 8163653552032260390}
   m_FillImage: {fileID: 7314734373444930672}

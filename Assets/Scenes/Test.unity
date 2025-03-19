@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 93669e33d9e4c2e42912cbdb07006699, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c62e0b797ce0fb745b57a58dba02364f, type: 2}
 --- !u!1 &48876831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1313,6 @@ MonoBehaviour:
   BombPrefab: {fileID: 6164340882889965523, guid: 93b66316e392a884ca0341131fe1d64d, type: 3}
   spawnInterval: 10
   players: []
-  target1: []
   rand: 0
   time: 0
 --- !u!1 &2039985053
