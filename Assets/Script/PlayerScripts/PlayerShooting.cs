@@ -2,12 +2,14 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using Complete;
 
 public class PlayerShooting : MonoBehaviour
 {
     public int m_PlayerNumber = 1;              // Used to identify the different players.
     public Rigidbody m_Shell;                   // Prefab of the shell.
     public Transform m_FireTransform;           // A child of the tank where the shells are spawned.
+    public Transform m_ShieldTransform;
     public Slider m_AimSlider;                  // A child of the tank that displays the current launch force.
     public float m_MinLaunchForce = 15f;        // The force given to the shell if the fire button is not held.
     public float m_MaxLaunchForce = 30f;        // The force given to the shell if the fire button is held for the max charge time.
@@ -16,6 +18,8 @@ public class PlayerShooting : MonoBehaviour
     private float m_CurrentLaunchForce;         // The force that will be given to the shell when the fire button is released.
     private float m_ChargeSpeed;                // How fast the launch force increases, based on the max charge time.
     private bool m_Fired;                       // Whether or not the shell has been launched with this button press.
+
+    public ShipShield shield;
 
     // Power-Up Modifiers
     [Header("Cannon Ball Modifier")]
@@ -38,6 +42,7 @@ public class PlayerShooting : MonoBehaviour
         // The rate that the launch force charges up is the range of possible forces by the max charge time.
         m_ChargeSpeed = (m_MaxLaunchForce - m_MinLaunchForce) / m_MaxChargeTime;
         m_Fired = true;
+        shield = GetComponent<ShipShield>();
     }
 
     private void Update()
@@ -106,11 +111,20 @@ public class PlayerShooting : MonoBehaviour
 
     private void Fire()
     {
+
         // Set the fired flag so only Fire is only called once.
         m_Fired = true;
-
+        Rigidbody shellInstance;
         // Create an instance of the shell and store a reference to its rigidbody.
-        Rigidbody shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+        if(shield.isShieldActive)
+        {
+            shellInstance = Instantiate(m_CurrentShell, m_ShieldTransform.position, m_FireTransform.rotation) as Rigidbody;
+        }
+        else
+        {
+            shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+        }
+        
 
         // Set the shell's velocity to the launch force in the fire position's forward direction.
         shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward;
