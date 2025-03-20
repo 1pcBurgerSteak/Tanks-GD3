@@ -1285,6 +1285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrateManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7478665254578738903, guid: 9882ddd233188bb4e81a8231480a14f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9882ddd233188bb4e81a8231480a14f9, type: 3}
 --- !u!1 &2036572582 stripped
@@ -1416,11 +1420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7900913399487357703, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}
       propertyPath: m_Name
-      value: SharkManager
+      value: TrapManager
       objectReference: {fileID: 0}
     - target: {fileID: 7900913399487357703, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}

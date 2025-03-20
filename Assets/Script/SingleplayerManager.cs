@@ -13,6 +13,10 @@ public class SingleplayerManager : MonoBehaviour
     public TextMeshProUGUI spaceText;
     public TextMeshProUGUI timerText; // Assign a TextMeshProUGUI component in the Inspector
 
+    public GameObject gameOverPanel;
+    public TextMeshProUGUI finalScoreText;
+    public TextMeshProUGUI highScoreText;
+
     private float timer = 3f;
     private bool isFirstSpawn = false; // Tracks the first-time spawn
     private bool timerActive = false;
@@ -72,7 +76,7 @@ public class SingleplayerManager : MonoBehaviour
         }
 
         // Pause if the player is inactive
-        if (!player.activeInHierarchy)
+        if (!player.activeInHierarchy && lives > 0)
         {
             Time.timeScale = 0; // Pause the game
             StartTimer(); // Start countdown for respawn
@@ -108,8 +112,35 @@ public class SingleplayerManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            Debug.Log("Game Over!"); // Trigger game-over logic
+            
+            GameOver();
         }
+    }
+
+    private void GameOver()
+    {
+        // Save and display final score
+        finalScoreText.text = $"Final Score: {score}";
+
+        // Retrieve the saved high score
+        int savedHighScore = PlayerPrefs.GetInt("HighScore", 0);
+
+        // Update high score if current score is greater
+        if (score > savedHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            highScoreText.text = $"High Score: {score}";
+        }
+        else
+        {
+            highScoreText.text = $"High Score: {savedHighScore}";
+        }
+
+        // Display the game over panel
+        gameOverPanel.SetActive(true);
+
+        // Pause the game
+        Time.timeScale = 0;
     }
 
     // Function to add score and update the text

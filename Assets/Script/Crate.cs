@@ -8,7 +8,7 @@ public class Crate : MonoBehaviour
     void Awake()
     {
         // Randomly generate an ID for the power-up.
-        randomCrateID = Random.Range(1, 8); // Updated range to include Spray Fire
+        //randomCrateID = Random.Range(1, 6); // Updated range to include Spray Fire
         Debug.Log(randomCrateID);
     }
 
