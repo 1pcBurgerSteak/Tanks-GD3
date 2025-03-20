@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: -7799466566026629229}
   - component: {fileID: 6189664005417932492}
   - component: {fileID: 3385746457979581742}
+  - component: {fileID: -6564199568154422835}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Untagged
@@ -217,6 +218,25 @@ MonoBehaviour:
   m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 0}
+--- !u!114 &-6564199568154422835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338641934085044293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a927eacb2c69d41449a523a792bbb04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShell: {fileID: 2688662862826539530, guid: 51f087269dbfdcb499d0fcb95ef26118, type: 3}
+  firePoint: {fileID: 8264147243591845778}
+  minLaunchForce: 10
+  maxLaunchForce: 20
+  fireRate: 2
+  rangeCollider: {fileID: 7956064445259665830}
+  isBoss: 1
 --- !u!1 &1338641934413938087
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8515417809672701000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.13, z: 1.56}
+  m_LocalPosition: {x: 0, y: 1.13, z: 1.59}
   m_LocalScale: {x: 0.22222224, y: 0.22222224, z: 0.22222224}
   m_Children: []
   m_Father: {fileID: 1338641934085044292}
