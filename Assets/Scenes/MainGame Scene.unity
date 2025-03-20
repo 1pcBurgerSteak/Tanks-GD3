@@ -1383,9 +1383,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffcc5d2e45f8fb43bd33a6e5caeb5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds: []
+  musicSounds:
+  - name: 
+    clip: {fileID: 0}
   sfxSounds:
-  - {fileID: 0}
+  - name: damagedShip
+    clip: {fileID: 8300000, guid: 1edecdc81fec5984382c68a2594971fc, type: 3}
+  - name: wreckShip
+    clip: {fileID: 8300000, guid: c60e7b761dc6b8b498ac9b4a93c8d306, type: 3}
   musicSource: {fileID: 1147015830}
   sfxSource: {fileID: 599910630}
 --- !u!4 &1636069828
