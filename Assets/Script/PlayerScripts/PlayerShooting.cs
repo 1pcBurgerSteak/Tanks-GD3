@@ -30,6 +30,7 @@ public class PlayerShooting : MonoBehaviour
     [Header("Player Buffs")]
     public bool Boost_ScatterShell = false;
     public bool Boost_TripleShell = false;
+    public bool Boost_RangedShell = false;
 
     private void OnEnable()
     {
@@ -48,7 +49,7 @@ public class PlayerShooting : MonoBehaviour
     private void Update()
     {
         // Shell that will be used by the player
-        if (Shell_GiantShell)
+        if (Shell_GiantShell) 
         {
             m_CurrentShell = m_GiantShell;
         }
@@ -73,6 +74,10 @@ public class PlayerShooting : MonoBehaviour
             else if (Boost_ScatterShell)
             {
                 ScatterFire();
+            }
+            else if (Boost_RangedShell)
+            {
+                SpeedFire();
             }
             else
                 Fire();
@@ -159,6 +164,27 @@ public class PlayerShooting : MonoBehaviour
         // Reset the launch force.
         m_CurrentLaunchForce = m_MinLaunchForce;
     }
+    void SpeedFire()
+    {
+        // Set the fired flag so only Fire is only called once.
+        m_Fired = true;
+        Rigidbody shellInstance;
+        // Create an instance of the shell and store a reference to its rigidbody.
+        if (shield.isShieldActive)
+        {
+            shellInstance = Instantiate(m_CurrentShell, m_ShieldTransform.position, m_FireTransform.rotation) as Rigidbody;
+        }
+        else
+        {
+            shellInstance = Instantiate(m_CurrentShell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+        }
+
+        // Set the shell's velocity to the launch force in the fire position's forward direction.
+        shellInstance.velocity = m_MaxLaunchForce * m_FireTransform.forward;
+
+        // Reset the launch force. This is a precaution in case of missing button events.
+        m_CurrentLaunchForce = m_MinLaunchForce;
+    }
 
     // Function to fire bullets with an angle offset and position offset.
     private void FireWithAngle(float angleOffset, Vector3 positionOffset)
@@ -195,5 +221,12 @@ public class PlayerShooting : MonoBehaviour
         Shell_GiantShell = false;
         Boost_ScatterShell = true;
         Boost_TripleShell = false;
+    }
+    public void EnableRangedShell()
+    {
+        Shell_GiantShell = false;
+        Boost_ScatterShell = false;
+        Boost_TripleShell = false;
+        Boost_RangedShell = true;
     }
 }
