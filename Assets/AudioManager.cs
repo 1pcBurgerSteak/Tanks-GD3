@@ -22,6 +22,11 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Start()
+    {
+        PlayMusic("BGM");
+    }
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
@@ -37,6 +42,7 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
 
     public void StopMusic()
     {
