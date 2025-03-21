@@ -9,6 +9,7 @@ public class Crate : MonoBehaviour
     {
         // Randomly generate an ID for the power-up.
         //randomCrateID = Random.Range(1, 6); // Updated range to include Spray Fire
+        randomCrateID = 6;
         Debug.Log(randomCrateID);
     }
 
@@ -64,14 +65,19 @@ public class Crate : MonoBehaviour
                 }
                 break;
 
-            case 6: // Rapid Fire
+            case 6: // Ranged Bullet
+                if (playerShooting != null)
+                {
+                    playerShooting.EnableRangedShell();
+                }
+                break;
+            case 7: // Rapid Fire
                 if (playerShooting != null)
                 {
                     //playerShooting.EnableRapidFire();
                 }
                 break;
-
-            case 7: // Spray Fire
+            case 8: // Spray Fire
                 if (playerShooting != null)
                 {
                     //playerShooting.EnableSprayFire();
