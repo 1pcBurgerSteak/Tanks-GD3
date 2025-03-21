@@ -21,10 +21,13 @@ public class CrateManager : MonoBehaviour
     public float spawnInterval;
     public float startingPositionY;
 
+    AudioManager audioManager;
+
     void Awake()
     {
         // Start spawning crates at regular intervals
         InvokeRepeating(nameof(SpawnCrate), 0f, spawnInterval);
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void SpawnCrate()
@@ -35,5 +38,15 @@ public class CrateManager : MonoBehaviour
         Vector3 cratePosition = new Vector3(randomPositionX, startingPositionY, randomPositionZ);
 
         Instantiate(cratePrefab, cratePosition, cratePrefab.transform.rotation);
+        StartCoroutine(CrateAudio());
+    }
+
+    IEnumerator CrateAudio()
+    {
+        audioManager.PlaySFX("crateFall");
+        yield return new WaitForSeconds(2.3f);
+        audioManager.StopSFX();
+        audioManager.PlaySFX("crateLand");
+        yield break;
     }
 }

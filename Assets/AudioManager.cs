@@ -38,9 +38,17 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void StopMusic()
+    {
+        if (musicSource.isPlaying)
+        {
+            musicSource.Stop();
+        }
+    }
+
     public void PlaySFX(string name)
     {
-        Sound s = Array.Find(musicSounds, x => x.name == name);
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
 
         if (s == null)
         {
@@ -51,4 +59,10 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(s.clip);
         }
     }
+
+    public void StopSFX()
+    {
+        sfxSource.Stop();
+    }
+
 }
