@@ -8,9 +8,12 @@ public class EnemyMovement : MonoBehaviour
 
     public bool isBoss = false;
 
+    //AudioManager audioManager;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        //audioManager = FindObjectOfType<AudioManager>();
+        //audioManager.PlaySFX("EnemyMove");
     }
 
     void Update()
@@ -43,6 +46,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 minDistance = distance;
                 nearest = player.transform;
+             
             }
         }
         return nearest;

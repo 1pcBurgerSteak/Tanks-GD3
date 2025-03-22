@@ -12,12 +12,15 @@ public class CannonBall : MonoBehaviour
     public float m_MaxLifeTime = 2f;                    // The time in seconds before the shell is removed.
     public float m_ExplosionRadius = 5f;                // The maximum distance away from the explosion tanks can be and are still affected.
 
-
+    AudioManager audioManager;
     private void Start()
     {
         // If it isn't destroyed by then, destroy the shell after it's lifetime.
         Destroy(gameObject, m_MaxLifeTime);
+        audioManager = FindObjectOfType<AudioManager>();
     }
+
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -72,7 +75,7 @@ public class CannonBall : MonoBehaviour
         // Once the particles have finished, destroy the gameobject they are on.
         m_ExplosionParticles.transform.parent = null;
         m_ExplosionParticles.Play();
-        //m_ExplosionAudio.Play();
+        audioManager.PlaySFX("Canon Fire");
 
         // Destroy the particle system after it finishes
         Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.main.duration);

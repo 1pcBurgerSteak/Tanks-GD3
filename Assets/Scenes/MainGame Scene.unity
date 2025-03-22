@@ -1013,9 +1013,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.018
+  m_Volume: 0.042
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1403,6 +1403,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 17962fec90a40cf488f0b6b4728767c2, type: 3}
   - name: crateLand
     clip: {fileID: 8300000, guid: 9aaf1f042833b25469687ffd3ed30e8e, type: 3}
+  - name: ShipDeath
+    clip: {fileID: 8300000, guid: 5cd5f50bc7fcb4744a41f6b81446acd5, type: 3}
+  - name: ShipMoving
+    clip: {fileID: 8300000, guid: 1aef13902b78f77409672d1f2dc4c643, type: 3}
+  - name: ShieldUp
+    clip: {fileID: 8300000, guid: ddf00c75f427929458cb5d53d503221d, type: 3}
+  - name: EnemyMove
+    clip: {fileID: 8300000, guid: f3efd4bf8f398264c854a783354ee3e4, type: 3}
   musicSource: {fileID: 1147015830}
   sfxSource: {fileID: 599910630}
 --- !u!4 &1636069828

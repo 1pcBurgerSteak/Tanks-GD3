@@ -10,11 +10,14 @@ public class BombExplotion : MonoBehaviour
     public GameObject explosionEffect; // Assign explosion VFX prefab
     public int damage = 50; // Damage amount to player
 
+    AudioManager audioManager;
+
     private bool hasExploded = false;
 
     void Start()
     {
         Invoke("Explode", explosionDelay);
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Explode()
@@ -24,7 +27,9 @@ public class BombExplotion : MonoBehaviour
 
         // Instantiate explosion effect
         if (explosionEffect)
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        {
+           Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        }
 
         // Apply force to nearby objects
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
@@ -43,7 +48,7 @@ public class BombExplotion : MonoBehaviour
                 player.TakeDamage(damage);
             }
         }
-
+        audioManager.PlaySFX("ShipDeath");
         // Destroy the bomb object
         Destroy(gameObject);
     }

@@ -11,12 +11,17 @@ public class PlayerMovement : MonoBehaviour
 
     public bool speedBuff = false;
     public bool scaleBuff = false;
+    private bool isMoving = false;
+
+    AudioManager audioManager;
 
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        //audioManager = FindObjectOfType<AudioManager>();
     }
 
+    
     private void OnEnable()
     {
         m_Rigidbody.isKinematic = false;
@@ -27,10 +32,16 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.isKinematic = true;
     }
 
+    private void Update()
+    {
+        //MovingAudio();
+    }
+
     public void UpdateMovement(Vector2 input)
     {
         m_MovementInputValue = input.y;
         m_TurnInputValue = input.x;
+        
     }
 
     private void FixedUpdate()
@@ -93,4 +104,21 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("potaka");
         }
     }
+
+    //public void MovingAudio()
+    //{
+    //    if (Mathf.Abs(m_MovementInputValue) > 0.1f && Mathf.Abs(m_TurnInputValue) < 0.1f)
+    //    {
+    //        if(isMoving)
+    //        {
+    //            audioManager.PlaySFX("ShipMoving");
+    //        } 
+    //        isMoving = true;
+    //    }
+    //    else
+    //    {
+    //        audioManager.StopSFX();
+    //        isMoving = false;
+    //    }
+    //}
 }

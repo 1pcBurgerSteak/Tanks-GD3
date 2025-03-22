@@ -13,9 +13,11 @@ namespace Complete
         public bool isShieldActive = false;
         public bool isOnCooldown = false;
 
+        AudioManager audioManager;
+
         private void Start()
         {
-
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         public IEnumerator ActivateShield()
@@ -29,6 +31,7 @@ namespace Complete
             if (shieldVisual != null)
             {
                 shieldVisual.SetActive(true);
+                audioManager.PlaySFX("ShieldUp");
                 Debug.Log("activate shield");
             }
                 //shieldVisual.SetActive(true);

@@ -22,6 +22,7 @@ public class UIHealth : MonoBehaviour
     private float m_CurrentHealth;                      
     private bool m_Dead;
 
+    AudioManager audioManager;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class UIHealth : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<SingleplayerManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnEnable()
@@ -85,8 +87,8 @@ public class UIHealth : MonoBehaviour
         
         m_ExplosionParticles.Play();
 
-        
-        //m_ExplosionAudio.Play();
+
+        audioManager.PlaySFX("ShipDeath");  
         if(manager != null && gameObject.CompareTag("Player"))
         {
             manager.Life();
