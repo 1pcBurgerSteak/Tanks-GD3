@@ -161,8 +161,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.49, y: 1.3, z: 1.95}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.022205107, y: 0.37398446, z: -0.00086971355}
 --- !u!114 &7049320900219637262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+  isBoss: 0
 --- !u!114 &3385746457979581742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +865,30 @@ PrefabInstance:
     - target: {fileID: 5447890308785319068, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}
       propertyPath: m_Name
       value: Ship(Red)01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000669592120318608, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000669592120318608, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}
+      propertyPath: m_Size.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000669592120318608, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}
+      propertyPath: m_Size.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000669592120318608, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}
+      propertyPath: m_Center.x
+      value: 2.2530086
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000669592120318608, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}
+      propertyPath: m_Center.y
+      value: 10.598138
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000669592120318608, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}
+      propertyPath: m_Center.z
+      value: -11.714729
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61414455c2b3642969a08164eb5f6a90, type: 3}

@@ -13,7 +13,7 @@ public class TrapManager : MonoBehaviour
 
     [Header("Trap Options")]
     public GameObject sharkPrefab;
-    public GameObject WhirlpoolPrefab;
+    public GameObject sharpRock;
     public GameObject BombPrefab;
     public float spawnInterval;
 
@@ -47,7 +47,7 @@ public class TrapManager : MonoBehaviour
         if (time > 5f)
         {
             SpawnTrap();
-            rand = Random.Range(1, 3);
+            rand = Random.Range(1, 4);
             time = 0;
         }
 
@@ -71,7 +71,7 @@ public class TrapManager : MonoBehaviour
         }
         else if (rand == 2)
         {
-            Instantiate(WhirlpoolPrefab, trapPosition, WhirlpoolPrefab.transform.rotation);
+            Instantiate(sharpRock, trapPosition, sharpRock.transform.rotation);
             Debug.Log("Whirlpool");
         }
         else if (rand == 3)

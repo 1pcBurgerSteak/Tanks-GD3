@@ -6,6 +6,8 @@ public class EnemyMovement : MonoBehaviour
     public string playerTag = "Player";
     private NavMeshAgent navMeshAgent;
 
+    public bool isBoss = false;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();

@@ -48,7 +48,7 @@ MonoBehaviour:
   minZ: -20
   maxZ: 20
   sharkPrefab: {fileID: 6996341113962175129, guid: 9b85041a3e8792548b83439dd4fd8592, type: 3}
-  WhirlpoolPrefab: {fileID: 4557063983873087349, guid: 4a530064b2f481f46ba7f1c97f818cd3, type: 3}
+  sharpRock: {fileID: 4557063983873087349, guid: 4a530064b2f481f46ba7f1c97f818cd3, type: 3}
   BombPrefab: {fileID: 8889404731392593264, guid: 413651017c3f74ed78fda2aee2222db1, type: 3}
   spawnInterval: 10
   players: []
