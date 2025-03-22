@@ -129,4 +129,4 @@ MonoBehaviour:
   explosionRadius: 5
   explosionForce: 700
   explosionEffect: {fileID: 0}
-  damage: 10
+  damage: 20

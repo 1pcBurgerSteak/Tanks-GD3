@@ -47,7 +47,7 @@ public class TrapManager : MonoBehaviour
         if (time > 5f)
         {
             SpawnTrap();
-            rand = Random.Range(1, 1);
+            rand = Random.Range(1, 3);
             time = 0;
         }
 

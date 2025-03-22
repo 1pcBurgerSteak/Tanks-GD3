@@ -10,7 +10,7 @@ public class Shark : MonoBehaviour
 
     private void Start()
     {
-        Invoke("DestroyShark", 15f);
+        Invoke("DestroyShark", 10f);
     }
 
     void Update()
