@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CancelInvoke(nameof(DisableScaleBuff)); // Cancel any existing timer
         scaleBuff = true;
-        gameObject.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
 
         // Reset the scale after 15 seconds
         Invoke(nameof(DisableScaleBuff), 15f);

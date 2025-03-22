@@ -5,6 +5,7 @@ using UnityEngine;
 public class SingleplayerManager : MonoBehaviour
 {
     public GameObject player;
+    public GameObject cameraRig;
 
     public TextMeshProUGUI lifeText;
     public TextMeshProUGUI scoreText;
@@ -99,6 +100,7 @@ public class SingleplayerManager : MonoBehaviour
         if (player != null)
         {
             player.transform.position = new Vector3(0, 1, 0); // Reset the player position
+            cameraRig.transform.position = new Vector3(0, 0, 0); // Reset the camera position
             player.SetActive(true); // Activate the player
             StartTimer(); // Trigger the 3, 2, 1 countdown
         }
