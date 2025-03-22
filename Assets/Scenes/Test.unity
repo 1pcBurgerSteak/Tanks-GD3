@@ -238,6 +238,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &310101065
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 797965651853304477, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_Name
+      value: CloudSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 797965651853304478, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b850099d82ba9ea478522d603d2afc53, type: 3}
 --- !u!1 &889061056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1370,7 @@ MonoBehaviour:
   minZ: -20
   maxZ: 20
   sharkPrefab: {fileID: 6996341113962175129, guid: 9b85041a3e8792548b83439dd4fd8592, type: 3}
-  WhirlpoolPrefab: {fileID: 7836525238940198281, guid: b107cb2fa06adb24c9dccdeabe3cb2f9, type: 3}
+  sharpRock: {fileID: 0}
   BombPrefab: {fileID: 6164340882889965523, guid: 93b66316e392a884ca0341131fe1d64d, type: 3}
   spawnInterval: 10
   players: []

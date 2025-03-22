@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 22212c8ee00a9d34380eadf554e54a9c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3192172831342483252
+    second: ExitHomePauseRestartSprites_0
+  - first:
+      213: 7938193414031780339
+    second: ExitHomePauseRestartSprites_1
+  - first:
+      213: 7989624232865210001
+    second: ExitHomePauseRestartSprites_2
+  - first:
+      213: -860711810358786059
+    second: ExitHomePauseRestartSprites_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -89,7 +101,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ExitHomePauseRestartSprites_0
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 467
+        width: 172
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43752d9f640ec4c20800000000000000
+      internalID: 3192172831342483252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitHomePauseRestartSprites_1
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 467
+        width: 172
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9a5b90ad02a2e60800000000000000
+      internalID: 7938193414031780339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitHomePauseRestartSprites_2
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 467
+        width: 172
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e98c0b8e8d0ee60800000000000000
+      internalID: 7989624232865210001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitHomePauseRestartSprites_3
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 467
+        width: 172
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7c4913b232e04f0800000000000000
+      internalID: -860711810358786059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
