@@ -23,17 +23,21 @@ public class UIHealth : MonoBehaviour
     private bool m_Dead;
 
 
-    /*private void Awake()
+    private void Awake()
     {
         // Instantiate the explosion prefab and get a reference to the particle system on it.
         m_ExplosionParticles = Instantiate(m_ExplosionPrefab).GetComponent<ParticleSystem>();
+        if(m_ExplosionParticles == null)
+        {
+            Debug.LogWarning("No Particle System found on: " + m_ExplosionPrefab.name);
+        }
 
         // Get a reference to the audio source on the instantiated prefab.
-        m_ExplosionAudio = m_ExplosionParticles.GetComponent<AudioSource>();
+        //m_ExplosionAudio = m_ExplosionParticles.GetComponent<AudioSource>();
 
         // Disable the prefab so it can be activated when it's required.
         m_ExplosionParticles.gameObject.SetActive(false);
-    }*/
+    }
 
     private void Start()
     {
@@ -75,11 +79,11 @@ public class UIHealth : MonoBehaviour
         m_Dead = true;
 
         
-        //m_ExplosionParticles.transform.position = transform.position;
-        //m_ExplosionParticles.gameObject.SetActive(true);
+        m_ExplosionParticles.transform.position = transform.position;
+        m_ExplosionParticles.gameObject.SetActive(true);
 
         
-        //m_ExplosionParticles.Play();
+        m_ExplosionParticles.Play();
 
         
         //m_ExplosionAudio.Play();
