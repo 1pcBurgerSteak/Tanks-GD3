@@ -162,13 +162,13 @@ public class SingleplayerManager : MonoBehaviour
     // Helper method to update the life text
     private void UpdateLifeText()
     {
-        lifeText.text = $"Lives: {lives}";
+        lifeText.text = $"X{lives}";
     }
 
     // Helper method to update the score text
     private void UpdateScoreText()
     {
-        scoreText.text = $"Score: {score:0000}"; // Format the score with leading zeroes
+        scoreText.text = $"{score}"; // Format the score with leading zeroes
     }
 
     // Helper method to update the wave text
