@@ -110,7 +110,7 @@ public class SingleplayerManager : MonoBehaviour
     public void Life()
     {
         lives--; // Reduce lives by 1
-        lifeText.text = $"Lives: {lives}"; // Update the life text
+        lifeText.text = $"X{lives}"; // Update the life text
 
         if (lives <= 0)
         {
@@ -149,7 +149,7 @@ public class SingleplayerManager : MonoBehaviour
     public void AddScore(int points)
     {
         score += points; // Add the given points to the score
-        scoreText.text = $"Score: {score}"; // Format the score and update the text
+        scoreText.text = $"{score}"; // Format the score and update the text
         Debug.Log($"Score added: {points}. Total Score: {score}"); // Format the score and update the text
     }
 
