@@ -1,12 +1,60 @@
 fileFormatVersion: 2
 guid: 6c05b7f933b38c04ba5134516e7ed759
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3495758552116287906
+    second: UI_SP_BUTTONS_0
+  - first:
+      213: -1546966037799980303
+    second: UI_SP_BUTTONS_1
+  - first:
+      213: 4156919696336644333
+    second: UI_SP_BUTTONS_2
+  - first:
+      213: 8804332680800250109
+    second: UI_SP_BUTTONS_3
+  - first:
+      213: 2320569116929818723
+    second: UI_SP_BUTTONS_4
+  - first:
+      213: 7300843683962959135
+    second: UI_SP_BUTTONS_5
+  - first:
+      213: 1408411438579794849
+    second: UI_SP_BUTTONS_6
+  - first:
+      213: -8352431507121210720
+    second: UI_SP_BUTTONS_7
+  - first:
+      213: -9172891644888603129
+    second: UI_SP_BUTTONS_8
+  - first:
+      213: -8916386376065779214
+    second: UI_SP_BUTTONS_9
+  - first:
+      213: 5124103000070404141
+    second: UI_SP_BUTTONS_10
+  - first:
+      213: -1593516462408825036
+    second: UI_SP_BUTTONS_11
+  - first:
+      213: -2710242378344647202
+    second: UI_SP_BUTTONS_12
+  - first:
+      213: 4480808730504060403
+    second: UI_SP_BUTTONS_13
+  - first:
+      213: 7632096515791064532
+    second: UI_SP_BUTTONS_14
+  - first:
+      213: -396357126202866694
+    second: UI_SP_BUTTONS_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,13 +83,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,9 +98,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -75,13 +123,361 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_0
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 825
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5623904e129c7fc0800000000000000
+      internalID: -3495758552116287906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_1
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 825
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2b655b592188ae0800000000000000
+      internalID: -1546966037799980303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_2
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 825
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de868f3807850b930800000000000000
+      internalID: 4156919696336644333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_3
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 825
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df826730de54f2a70800000000000000
+      internalID: 8804332680800250109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_4
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 596
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36008532151543020800000000000000
+      internalID: 2320569116929818723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_5
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 596
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15344726aec15560800000000000000
+      internalID: 7300843683962959135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_6
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 596
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a34526cdbeab8310800000000000000
+      internalID: 1408411438579794849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_7
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 596
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa724f1cc3361c80800000000000000
+      internalID: -8352431507121210720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_8
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 344
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706244726a753b080800000000000000
+      internalID: -9172891644888603129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 344
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9777ef4d1a24480800000000000000
+      internalID: -8916386376065779214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_10
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 344
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28b5b7a7887c1740800000000000000
+      internalID: 5124103000070404141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_11
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 344
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43782626831b2e9e0800000000000000
+      internalID: -1593516462408825036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_12
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 98
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5be879ae8436ad0800000000000000
+      internalID: -2710242378344647202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_13
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 98
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fdd920dcc70f2e30800000000000000
+      internalID: 4480808730504060403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_14
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 98
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd09333857aae960800000000000000
+      internalID: 7632096515791064532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SP_BUTTONS_15
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 98
+        width: 206
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3cb703b4bdf7af0800000000000000
+      internalID: -396357126202866694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
