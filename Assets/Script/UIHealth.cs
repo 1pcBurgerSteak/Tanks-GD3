@@ -58,6 +58,7 @@ public class UIHealth : MonoBehaviour
         if (m_CurrentHealth <= 0f && !m_Dead)
         {
             OnDeath();
+            AudioManager.Instance.PlaySFX("wreckShip");
         }
     }
 
@@ -74,16 +75,17 @@ public class UIHealth : MonoBehaviour
         
         m_Dead = true;
 
-        
+
         //m_ExplosionParticles.transform.position = transform.position;
         //m_ExplosionParticles.gameObject.SetActive(true);
 
-        
-        //m_ExplosionParticles.Play();
 
-        
+        //m_ExplosionParticles.Play();
+        AudioManager.Instance.PlaySFX("damagedShip");
+
+
         //m_ExplosionAudio.Play();
-        if(manager != null && gameObject.CompareTag("Player"))
+        if (manager != null && gameObject.CompareTag("Player"))
         {
             manager.Life();
         }
