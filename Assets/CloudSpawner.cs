@@ -28,5 +28,6 @@ public class CloudSpawner : MonoBehaviour
     {
         GameObject cloud = Instantiate(cloudVariants[Random.Range(0, cloudVariants.Length)], new Vector3(Random.Range(randomXRange.x, randomXRange.y), transform.position.y, transform.position.z), Quaternion.identity);
         cloud.transform.localScale = Vector3.one * Random.Range(randomScaleRange.x, randomScaleRange.y);
+
     }
 }
