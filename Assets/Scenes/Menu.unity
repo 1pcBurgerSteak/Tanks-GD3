@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 150877464}
   - component: {fileID: 150877463}
   - component: {fileID: 150877467}
+  - component: {fileID: 150877466}
   m_Layer: 0
   m_Name: START
   m_TagString: Untagged
@@ -1053,6 +1054,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150877461}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &150877466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150877461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b52fffa0bdecc44cbd20cf1a7eec84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 1, b: 0, a: 1}
+  scaleMultiplier: 1.2
 --- !u!114 &150877467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1778,6 +1793,7 @@ GameObject:
   - component: {fileID: 274411693}
   - component: {fileID: 274411692}
   - component: {fileID: 274411695}
+  - component: {fileID: 274411696}
   m_Layer: 0
   m_Name: OPTION
   m_TagString: Untagged
@@ -1914,6 +1930,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   button: {fileID: 0}
+--- !u!114 &274411696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274411690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b52fffa0bdecc44cbd20cf1a7eec84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 1, b: 0, a: 1}
+  scaleMultiplier: 1.2
 --- !u!1 &281846093
 GameObject:
   m_ObjectHideFlags: 0
@@ -6683,6 +6713,7 @@ GameObject:
   - component: {fileID: 1114952825}
   - component: {fileID: 1114952824}
   - component: {fileID: 1114952827}
+  - component: {fileID: 1114952828}
   m_Layer: 0
   m_Name: QUIT
   m_TagString: Untagged
@@ -6819,6 +6850,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   button: {fileID: 0}
+--- !u!114 &1114952828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114952822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b52fffa0bdecc44cbd20cf1a7eec84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 1, b: 0, a: 1}
+  scaleMultiplier: 1.2
 --- !u!1 &1116863949
 GameObject:
   m_ObjectHideFlags: 0
@@ -8135,6 +8180,7 @@ GameObject:
   - component: {fileID: 1331399817}
   - component: {fileID: 1331399816}
   - component: {fileID: 1331399819}
+  - component: {fileID: 1331399820}
   m_Layer: 0
   m_Name: CREDITS
   m_TagString: Untagged
@@ -8271,6 +8317,20 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   button: {fileID: 0}
+--- !u!114 &1331399820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331399814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b52fffa0bdecc44cbd20cf1a7eec84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 1, b: 0, a: 1}
+  scaleMultiplier: 1.2
 --- !u!1 &1371052699
 GameObject:
   m_ObjectHideFlags: 0
