@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.9283978, g: 0.92735386, b: 0.8373409, a: 1}
+  m_FogColor: {r: 0.7137469, g: 0.752947, b: 0.95281774, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.41222537, g: 0.49662066, b: 0.6866346, a: 1}
+  m_AmbientSkyColor: {r: 0.30431488, g: 0.28599632, b: 0.5471848, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44146183, g: 0.4903081, b: 0.57033134, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -226,7 +226,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.77278084, g: 0.77278084, b: 0.77278084, a: 1}
+  m_Color: {r: 0.9999755, g: 0.9999755, b: 0.9999755, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -284,7 +284,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48876831}
-  m_LocalRotation: {x: 0.0465076, y: 0.8425096, z: -0.53158396, w: 0.07371009}
+  m_LocalRotation: {x: 0.061628457, y: 0.70441604, z: -0.70441604, w: 0.061628457}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2003,7 +2003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &706079601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4460,7 +4460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 48876832}
   Preset: {fileID: 11400000, guid: 589351013cd81e44183ceefcb9f56ada, type: 2}
-  TimeOfDay: 10.3
+  TimeOfDay: 12
 --- !u!4 &1426178856
 Transform:
   m_ObjectHideFlags: 0
@@ -4532,7 +4532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7900913399487357703, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8cbbac582ed15d4fae90f4206cbcf59, type: 3}
