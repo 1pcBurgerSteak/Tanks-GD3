@@ -15,6 +15,10 @@ public class PlayerShooting : MonoBehaviour
     public float m_MaxLaunchForce = 30f;        // The force given to the shell if the fire button is held for the max charge time.
     public float m_MaxChargeTime = 0.75f;       // How long the shell can charge for before it is fired at max force.
 
+    public float maxHealth = 100f;
+    public float currentHealth;
+    public float healthRestoreAmount = 25f;
+
     private float m_CurrentLaunchForce;         // The force that will be given to the shell when the fire button is released.
     private float m_ChargeSpeed;                // How fast the launch force increases, based on the max charge time.
     private bool m_Fired;                       // Whether or not the shell has been launched with this button press.
@@ -44,6 +48,7 @@ public class PlayerShooting : MonoBehaviour
         m_ChargeSpeed = (m_MaxLaunchForce - m_MinLaunchForce) / m_MaxChargeTime;
         m_Fired = true;
         shield = GetComponent<ShipShield>();
+        currentHealth = maxHealth;
     }
 
     private void Update()
@@ -228,5 +233,11 @@ public class PlayerShooting : MonoBehaviour
         Boost_ScatterShell = false;
         Boost_TripleShell = false;
         Boost_RangedShell = true;
+    }
+
+    public void RestoreHealth(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 }

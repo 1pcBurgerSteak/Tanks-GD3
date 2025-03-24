@@ -8,8 +8,8 @@ public class Crate : MonoBehaviour
     void Awake()
     {
         // Randomly generate an ID for the power-up.
-        randomCrateID = Random.Range(1, 6);
-        //randomCrateID = 6;
+        randomCrateID = Random.Range(1, 7);
+        //randomCrateID = 7;
         Debug.Log(randomCrateID);
     }
 
@@ -74,6 +74,7 @@ public class Crate : MonoBehaviour
             case 7: // Rapid Fire
                 if (playerShooting != null)
                 {
+                    playerShooting.RestoreHealth(25f);
                     //playerShooting.EnableRapidFire();
                 }
                 break;
